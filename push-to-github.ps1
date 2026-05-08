@@ -9,7 +9,7 @@
 
 $GITHUB_USERNAME = "sachi41999"       # e.g. "john-doe"
 $GITHUB_PAT      = "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" # e.g. "ghp_xxxxxxxxxxxx"
-$REPO_NAME       = "XML_File_Editor_AHAP"
+$REPO_NAME       = "XML_File_Editor_AHAP-main"
 
 # -----------------------------------------------------------
 # DO NOT EDIT BELOW THIS LINE
