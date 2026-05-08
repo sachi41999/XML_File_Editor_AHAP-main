@@ -38,7 +38,7 @@ jobs:
         run: npm install -g @angular/cli@19
 
       - name: Build Angular app
-        run: npx ng build --configuration production --base-href "/XML_File_Editor_AHAP/"
+        run: npx ng build --configuration production --base-href "/XML_File_Editor_AHAP-main/"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
