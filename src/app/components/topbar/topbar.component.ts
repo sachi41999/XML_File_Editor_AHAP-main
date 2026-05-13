@@ -134,7 +134,13 @@ content = content.replace(/<ClaimList>/g, "<ClaimList>\n");
 
 // Add LF + one space after </Claim>
 content = content.replace(/<\/Claim>/g, "</Claim>\n");
-    const ts = new Date().toISOString().replace(/[-T:.Z]/g, '').slice(0, 14);
+const now = new Date().toISOString();
+
+const datePart = now.slice(0, 10).replace(/-/g, '');
+const timePart = now.slice(11, 19).replace(/:/g, '');
+
+const ts = `${datePart}_${timePart}`;
+    ///////////////////const ts = new Date().toISOString().replace(/[-T:.Z]/g, '').slice(0, 14);
     const baseName = (this.state.xmlFileName || 'claim').replace(/\.xml$/i, '');
     const fileName = baseName + '_' + ts + '.xml';
 

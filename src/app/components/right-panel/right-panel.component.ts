@@ -4,7 +4,7 @@ import { XmlStateService, XmlChange } from '../../services/xml-state.service';
 import { EditorService } from '../editor/editor.service';
 import { ValidationService, ValidationError } from '../../services/validation.service';
 
-type Tab = 'preview' | 'changes' | 'schema' | 'errors';
+type Tab = 'preview' | 'changes' | 'errors';
 
 @Component({
   selector: 'app-right-panel',
@@ -102,7 +102,7 @@ type Tab = 'preview' | 'changes' | 'schema' | 'errors';
         }
 
         <!-- SCHEMA TAB -->
-        @if (activeTab() === 'schema') {
+       <!--  @if (activeTab() === 'schema' && (!state.xmlFileName.includes("Submission") || !state.xmlFileName.includes("submission"))) {
           @if (!state.xsdDoc) {
             <div class="empty-state"><div class="icon">📋</div><p>Schema not loaded</p></div>
           } @else {
@@ -119,7 +119,7 @@ type Tab = 'preview' | 'changes' | 'schema' | 'errors';
               </div>
             }
           }
-        }
+        }-->
 
       </div>
     </div>
@@ -137,8 +137,8 @@ export class RightPanelComponent implements OnInit {
   tabs = [
     { id: 'preview' as Tab, label: 'Preview' },
     { id: 'changes' as Tab, label: 'Changes' },
-    { id: 'errors'  as Tab, label: 'Errors'  },
-    { id: 'schema'  as Tab, label: 'Schema'  }
+    { id: 'errors'  as Tab, label: 'Errors'  }
+    //{ id: 'schema'  as Tab, label: 'Schema'  }
   ];
 
   constructor(
@@ -191,7 +191,7 @@ export class RightPanelComponent implements OnInit {
   switchTab(tab: Tab) {
     this.activeTab.set(tab);
     if (tab === 'preview') this.updatePreview();
-    if (tab === 'schema') this.buildSchema();
+   // if (tab === 'schema') this.buildSchema();
   }
 
   updatePreview() {
